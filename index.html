@@ -49,6 +49,10 @@
   </script>
 
 
+<script>
+  document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+
+</script>
 
 
 </head>
@@ -56,14 +60,11 @@
   <p>Test</p>
   <form enctype="multipart/form-data">
       <input id="upload" type=file  name="files[]">
+      <textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
   </form>
   
-      <textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
+     
   
-      <script>
-          document.getElementById('upload').addEventListener('change', handleFileSelect, false);
-  
-      </script>
  </body> 
 
 
