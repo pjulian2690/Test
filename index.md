@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/pjulian2690/Test/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pjulian2690/Test/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cloud API JQuery sample</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="converter.js" type="text/javascript" encoding="UTF-8"></script>
+</head>
+<body>
+   
+    <form id="form" enctype="multipart/form-data">
+        <p>
+            <label>Copy-paste your API Key for ByteScout Cloud API here</label>
+            <input type="text" id="apiKey" placeholder="your cloud API Key" value=""/> 
+            <a href="https://secure.bytescout.com/sign_up" target="_blank">no api key yet? sign up here</a>
+        </p>
+        <p>
+            <label>Input PDF File</label>
+            <input type="file" name="file" id="inputFile" />
+        </p>
+        <p>
+            <label>Convert To</label>
+            <select id="convertType">
+                <option value="csv"> CSV  </option>
+                <option value="text"> TXT  </option>
+                <option value="xml"> XML  </option>
+                <option value="xls"> XLS  </option>
+                <option value="xlsx"> XLSX  </option>
+                <option value="html"> HTML  </option>
+            </select>
+        </p>
+        <p>
+            <label>Output As</label>
+            <select id="outputType">
+                <option value="link"> URL to output file  </option>
+                <option value="inline"> inline content</option>
+            </select>
+        </p>        
+        <button type="button" id="submit">Convert</button> <span id="status"></span>
+    </form>
+  
+    <div id="errorBlock">
+        <h2>Error:</h2>
+        <h4>Code: <span id="statusCode"></span></h4>
+        <ul id="errors"></ul>
+    </div>
+   
+    <div id="resultBlock">
+        <h2>Output:</h2>
+        <a id="result" href="" target="_blank"></a>
+        <div id="inlineOutput"></div>
+    </div>
+   
+</body>
+</html>
